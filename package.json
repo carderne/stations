@@ -5,8 +5,8 @@
   "main": "",
   "scripts": {
     "dev": "run-p dev:*",
-    "dev:tw": "npx tailwindcss -i ./tailwind.config.css -o ./dist/tw.css --watch",
-    "dev:serve": "npx lite-server --baseDir=dist --host=0.0.0.0"
+    "dev:tw": "npx tailwindcss -i ./tailwind.config.css -o ./docs/tw.css --watch",
+    "dev:serve": "npx lite-server --baseDir=docs --host=0.0.0.0"
   },
   "repository": {
     "type": "git",
