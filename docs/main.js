@@ -1,6 +1,6 @@
 /* global mapboxgl */
 
-import buffered from "./buffered.js";
+import { stations5, stations10 } from "./buffered.js";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiY2FyZGVybmUiLCJhIjoiY2puMXN5cnBtNG53NDN2bnhlZ3h4b3RqcCJ9.eNjrtezXwvM7Ho1VSxo06w";
@@ -12,17 +12,30 @@ const map = new mapboxgl.Map({
 });
 
 map.on("load", () => {
-  map.addSource("stations", {
+  map.addSource("stations10", {
     type: "geojson",
-    data: buffered,
+    data: stations10,
   });
   map.addLayer({
-    id: "stations",
+    id: "stations10",
     type: "fill",
-    source: "stations",
+    source: "stations10",
     paint: {
       "fill-color": "#99d8c9",
-      "fill-opacity": 0.8,
+      "fill-opacity": 0.5,
+    },
+  });
+  map.addSource("stations5", {
+    type: "geojson",
+    data: stations5,
+  });
+  map.addLayer({
+    id: "stations5",
+    type: "fill",
+    source: "stations5",
+    paint: {
+      "fill-color": "#99d8c9",
+      "fill-opacity": 0.6,
     },
   });
 });
